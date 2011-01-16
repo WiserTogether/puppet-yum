@@ -1,7 +1,7 @@
-# Class: yum::remi
+# Class: yum::repo::remi
 #
 #
-class yum::remi {
+class yum::repo::remi {
 	yum::managed_repo { "remi":
 		descr    => "Les RPM de remi pour Enterpise Linux $releasever - $basearch",
 		baseurl  => "http://rpms.famillecollet.com/el$releasever.$basearch/",

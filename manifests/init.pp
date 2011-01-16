@@ -1,5 +1,15 @@
 import "classes/*.pp"
 import "classes/centos/*.pp"
+import "classes/repo/*.pp"
+import "classes/repo/epel/*.pp"
+import "classes/repo/epel/testing/*.pp"
+import "classes/repo/jpackage/*.pp"
+import "classes/repo/jpackage/generic/*.pp"
+import "classes/repo/kbs/*.pp"
+import "classes/repo/kbs/extras/*.pp"
+import "classes/repo/kbs/misc/*.pp"
+import "classes/repo/puppetlabs/*.pp"
+import "classes/updatesd/*.pp"
 import "definitions/*.pp"
 
 #
