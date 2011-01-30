@@ -9,6 +9,8 @@ import "classes/repo/kbs/*.pp"
 import "classes/repo/kbs/extras/*.pp"
 import "classes/repo/kbs/misc/*.pp"
 import "classes/repo/puppetlabs/*.pp"
+import "classes/repo/stealthymonkeys/*.pp"
+import "classes/repo/stealthymonkeys/testing/*.pp"
 import "classes/updatesd/*.pp"
 import "definitions/*.pp"
 
@@ -31,7 +33,8 @@ import "definitions/*.pp"
 class yum {
     # autoupdate
     package { "yum-cron":
-        ensure => present
+        ensure  => present,
+		require => [ Class["yum::repo::base"], Class["yum::repo::extras"] ]
     }
 
     service { "yum-cron":
