@@ -7,7 +7,6 @@ class yum::repo::kbs::misc {
         baseurl  => "http://centos.karan.org/el$lsbmajdistrelease/misc/stable/$architecture/RPMS/",
 	    enabled  => 1,
 		gpgcheck => 1,
-    	gpgkey   => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kbsingh",
-	    priority => 20
+    	gpgkey   => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kbsingh"
     }
 }

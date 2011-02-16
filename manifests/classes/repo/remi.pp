@@ -7,7 +7,6 @@ class yum::repo::remi {
 		baseurl  => "http://rpms.famillecollet.com/el$releasever.$basearch/",
 		enabled  => 1,
 		gpgcheck => 1,
-		gpgkey   => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi",
-		priority => 1
+		gpgkey   => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi"
     }
 }

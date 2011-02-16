@@ -9,7 +9,6 @@ class yum::repo::stealthymonkeys::passenger {
 	    enabled        => 1,
 		gpgcheck       => 0,
         failovermethod => "priority",
-    	gpgkey         => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-passenger.rhel5",
-	    priority       => 20
+    	gpgkey         => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-passenger.rhel5"
     }
 }

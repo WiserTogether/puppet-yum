@@ -8,7 +8,6 @@ class yum::repo::epel::testing::main {
 	    enabled        => 1,
     	gpgcheck       => 1,
         failovermethod => "priority",
-	    gpgkey         => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL",
-		priority       => 17
+	    gpgkey         => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL"
     }
 }

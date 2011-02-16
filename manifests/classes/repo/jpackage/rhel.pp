@@ -8,7 +8,6 @@ class yum::repo::jpackage::rhel {
 		failovermethod => "priority",
 		gpgcheck       => 1,
 		gpgkey         => "http://www.jpackage.org/jpackage.asc",
-		enabled        => 1,
-		priority       => 1
+		enabled        => 1
 	}
 }
