@@ -12,35 +12,40 @@
 # the Free Software Foundation.
 #
 
-#modules_dir { "yum": }
+# modules_dir { "yum": }
 
 class yum {
-    # autoupdate
-    package { "yum-cron":
-        ensure  => present,
-		require => [ Class["yum::repo::base"], Class["yum::repo::extras"] ]
-    }
+	# autoupdate
+	package { 'yum-cron':
+		ensure  => present,
+		require => [ Class['yum::repo::base'], Class['yum::repo::extras'] ]
+	}
 
-    service { "yum-cron":
-        enable     => true,
-        ensure     => running,
-        hasstatus  => true,
-        hasrestart => true,
-        require    => Package[yum-cron],
-    }
+	service { "yum-cron":
+		enable     => true,
+		ensure     => running,
+		hasstatus  => true,
+		hasrestart => true,
+		require    => Package['yum-cron']
+	}
 
 	case $operatingsystem {
 		centos: {
 			case $lsbmajdistrelease {
-				5: { include yum::centos::five }
+				5: {
+					include yum::centos::five
+				}
 				default: { 
-					info("no class for this version yet defined, try to configure it with the version for 5")
+					info 'no class for this version yet defined, try to configure it with the version for 5'
 					include yum::centos::five
 				}
 			}
 		}
-		default: { fail("no managed repo yet for this distro") }
+		default: {
+			fail 'no managed repo yet for this distro'
+		}
 	}
+	
 	if $use_munin {
 		include yum::munin
 	}

@@ -2,12 +2,12 @@
 #
 #
 class yum::repo::epel::main {
-	yum::managed_repo { "epel":
-	    descr          => "Extra Packages for Enterprise Linux $lsbmajdistrelease - $architecture",
-        mirrorlist     => "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-$lsbmajdistrelease&arch=$architecture",
-	    enabled        => 1,
+	yum::managed_repo { 'epel':
+		descr          => "Extra Packages for Enterprise Linux ${lsbmajdistrelease} - ${architecture}",
+		mirrorlist     => "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-${lsbmajdistrelease}&arch=${architecture}",
+		enabled        => 1,
 		gpgcheck       => 1,
-        failovermethod => "priority",
-    	gpgkey         => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL"
-    }
+		failovermethod => 'priority',
+		gpgkey         => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL'
+	}
 }

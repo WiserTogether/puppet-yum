@@ -2,14 +2,13 @@
 #
 #
 class yum::prerequisites {
-	package { "yum-priorities":
+	package { 'yum-priorities':
 		ensure => present
 	} 
 
 	# ensure there are no other repos
-	file { "yum_repos_d":
-		path    => '/etc/yum.repos.d/',
-		source  => "puppet:///modules/yum/empty",
+	file { '/etc/yum.repos.d/':
+		source  => 'puppet:///modules/common/empty',
 		ensure  => directory,
 		recurse => true,
 		purge   => true,
@@ -17,14 +16,14 @@ class yum::prerequisites {
 		mode    => 0755,
 		owner   => root,
 		group   => root,
-		require =>  Package["yum-priorities"]
+		require => Package['yum-priorities']
 	}
     
 	#gpg key
-	file {rpm_gpg: 
-		path    => '/etc/pki/rpm-gpg/',
-		source  => [ "puppet:///modules/yum/${operatingsystem}-${lsbdistrelease}/rpm-gpg/", "puppet:///modules/yum/${operatingsystem}-${lsbmajdistrelease}/rpm-gpg/",
-					 "puppet:///modules/yum/${operatingsystem}/rpm-gpg/" ],
+	file { '/etc/pki/rpm-gpg/': 
+		source  => [ "puppet:///modules/yum/${operatingsystem}-${lsbdistrelease}/rpm-gpg/",
+								 "puppet:///modules/yum/${operatingsystem}-${lsbmajdistrelease}/rpm-gpg/",
+								 "puppet:///modules/yum/${operatingsystem}/rpm-gpg/" ],
 		recurse => true,
 		purge   => true,
 		owner   => root,

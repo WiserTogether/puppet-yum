@@ -1,13 +1,13 @@
 # manifests/updatesd.pp
 
 class yum::updatesd {
-	package { "yum-updatesd":
+	package { 'yum-updatesd':
 		ensure => present
 	}
 
-	service { "yum-updatesd":
+	service { 'yum-updatesd':
 		ensure  => running,
 		enable  => true,
-		require => Package["yum-updatesd"]
+		require => Package['yum-updatesd']
 	}
 }
