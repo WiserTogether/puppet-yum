@@ -2,22 +2,23 @@
 # Parameters:
 # 
 #
-define yum::managed_repo ($descr = "absent", $baseurl = "absent", $mirrorlist = "absent", $enabled = 0, $gpgcheck = 0, $gpgkey = 'absent',
-						  $failovermethod = "absent", $priority = 99) {
+define yum::managed_repo ($descr = 'absent', $baseurl = 'absent', $mirrorlist = 'absent',
+													$enabled = 0, $gpgcheck = 0, $gpgkey = 'absent',
+													$failovermethod = "absent", $priority = 99) {
 	# ensure that everything is setup
-    include yum::prerequisites
+	include yum::prerequisites
     
-    file { "/etc/yum.repos.d/${name}.repo":
+	file { "/etc/yum.repos.d/${name}.repo":
 		ensure  => file,
 		replace => false,
 		mode    => 0644,
 		owner   => root,
 		group   => root,
 		before  => Yumrepo[$name],
-		require => [ File[yum_repos_d], Package[yum-priorities] ]
-    }
+		require => [ File['/etc/yum.repos.d/'], Package['yum-priorities'] ]
+	}
 
-    yumrepo { $name:
+   yumrepo { $name:
 		descr          => $descr,
 		baseurl        => $baseurl, 
 		mirrorlist     => $mirrorlist,
@@ -26,6 +27,6 @@ define yum::managed_repo ($descr = "absent", $baseurl = "absent", $mirrorlist = 
 		gpgkey         => $gpgkey, 
 		failovermethod => $failovermethod,
 		priority       => $priority,
-		require        => [ File[rpm_gpg], Package[yum-priorities] ]
-    }
+		require        => [ File['/etc/pki/rpm-gpg/'], Package['yum-priorities'] ]
+	}
 }
