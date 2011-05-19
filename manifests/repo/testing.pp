@@ -7,6 +7,6 @@ class yum::repo::testing {
 		baseurl  => 'http://dev.centos.org/centos/$releasever/testing/$basearch',
 		enabled  => 1,
 		gpgcheck => 1,
-		gpgkey   => 'http://dev.centos.org/centos/RPM-GPG-KEY-CentOS-testing'
+		gpgkey   => 'http://dev.centos.org/centos/RPM-GPG-KEY-CentOS-testing',
 	}
 }

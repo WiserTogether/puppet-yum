@@ -7,6 +7,6 @@ class yum::repo::remi {
 		baseurl  => "http://rpms.famillecollet.com/el${lsbmajdistrelease}.${architecture}/",
 		enabled  => 1,
 		gpgcheck => 1,
-		gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi'
+		gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi',
     }
 }

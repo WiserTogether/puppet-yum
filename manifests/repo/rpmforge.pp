@@ -8,6 +8,6 @@ class yum::repo::rpmforge {
 		mirrorlist => "http://apt.sw.be/redhat/el${lsbmajdistrelease}/en/mirrors-rpmforge",
 		enabled    => 1,
 		gpgcheck   => 1,
-		gpgkey     => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmforge-dag'
+		gpgkey     => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmforge-dag',
 	}
 }

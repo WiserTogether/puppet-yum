@@ -7,6 +7,6 @@ class yum::repo::puppetlabs::prosvc {
 		baseurl  => "http://yum.puppetlabs.com/prosvc/${lsbmajdistrelease}/${architecture}/",
 		enabled  => 1,
 		gpgcheck => 0,
-		gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs'
+		gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-puppetlabs',
 	}
 }

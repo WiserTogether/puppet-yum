@@ -8,6 +8,6 @@ class yum::repo::epel::main {
 		enabled        => 1,
 		gpgcheck       => 1,
 		failovermethod => 'priority',
-		gpgkey         => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL'
+		gpgkey         => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL',
 	}
 }

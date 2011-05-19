@@ -6,6 +6,6 @@ class yum::repo::foreman::stable {
 		descr    => 'Foreman Repo - Stable',
 		baseurl  => 'http://yum.theforeman.org/stable',
 		gpgcheck => 0,
-		enabled  => 1
+		enabled  => 1,
 	}
 }

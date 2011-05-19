@@ -18,15 +18,15 @@ class yum {
 	# autoupdate
 	package { 'yum-cron':
 		ensure  => present,
-		require => [ Class['yum::repo::base'], Class['yum::repo::extras'] ]
+		require => [ Class['yum::repo::base'], Class['yum::repo::extras'] ],
 	}
 
-	service { "yum-cron":
+	service { 'yum-cron':
 		enable     => true,
 		ensure     => running,
 		hasstatus  => true,
 		hasrestart => true,
-		require    => Package['yum-cron']
+		require    => Package['yum-cron'],
 	}
 
 	case $operatingsystem {

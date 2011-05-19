@@ -7,6 +7,6 @@ class yum::repo::kbs::misc::testing {
 		baseurl  => "http://centos.karan.org/el${lsbmajdistrelease}/misc/testing/${architecture}/RPMS/",
 		enabled  => 1,
 		gpgcheck => 1,
-		gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kbsingh'
+		gpgkey   => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-kbsingh',
 	}
 }

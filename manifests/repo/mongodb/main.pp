@@ -6,6 +6,6 @@ class yum::repo::mongodb::main {
 		descr    => "CentOS-${lsbmajdistrelease} - 10gen",
 		baseurl  => "http://downloads.mongodb.org/distros/centos/5.4/os/${architecture}/",
 		enabled  => 1,
-		gpgcheck => 0
+		gpgcheck => 0,
 	}
 }

@@ -8,6 +8,6 @@ class yum::repo::jpackage::generic::nonfree {
 		failovermethod => 'priority',
 		gpgcheck       => 1,
 		gpgkey         => 'http://www.jpackage.org/jpackage.asc',
-		enabled        => 1
+		enabled        => 1,
 	}
 }
