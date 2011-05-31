@@ -22,8 +22,8 @@ class yum::prerequisites {
 	#gpg key
 	file { '/etc/pki/rpm-gpg/': 
 		source  => [ "puppet:///modules/yum/${operatingsystem}-${lsbdistrelease}/rpm-gpg/",
-								 "puppet:///modules/yum/${operatingsystem}-${lsbmajdistrelease}/rpm-gpg/",
-								 "puppet:///modules/yum/${operatingsystem}/rpm-gpg/" ],
+			     "puppet:///modules/yum/${operatingsystem}-${lsbmajdistrelease}/rpm-gpg/",
+			     "puppet:///modules/yum/${operatingsystem}/rpm-gpg/" ],
 		owner   => 'root',
 		group   => 'root',
 		mode    => '0600',
