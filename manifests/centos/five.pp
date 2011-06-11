@@ -7,7 +7,7 @@ class yum::centos::five {
 	#include yum::repo::addons
 	include yum::repo::extras
 	#include yum::repo::centosplus
-	include yum::repo::rpmforge
+	#include yum::repo::rpmforge
 	#include yum::repo::atrpms
 	#include yum::repo::plus
 	include yum::repo::epel::main
