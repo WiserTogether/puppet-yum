@@ -21,7 +21,7 @@ define yum::managed_repo ($descr          = 'absent',
 		mode    => '0644',
 		replace => false,
 		before  => Yumrepo[$name],
-		require => [ File['/etc/yum.repos.d/'], Package['yum-priorities'] ],
+		require => [ File['/etc/yum.repos.d/']],
 	}
 
 	yumrepo { $name:
@@ -33,6 +33,6 @@ define yum::managed_repo ($descr          = 'absent',
 		gpgkey         => $gpgkey, 
 		failovermethod => $failovermethod,
 		priority       => $priority,
-		require        => [ File['/etc/pki/rpm-gpg/'], Package['yum-priorities'] ],
+		require        => [ File['/etc/pki/rpm-gpg/']],
 	}
 }

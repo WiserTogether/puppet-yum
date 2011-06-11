@@ -2,9 +2,9 @@
 #
 #
 class yum::prerequisites {
-	package { 'yum-priorities':
-		ensure => present,
-	} 
+	#package { 'yum-priorities':
+	#	ensure => present,
+	#} 
 
 	# ensure there are no other repos
 	file { '/etc/yum.repos.d/':
@@ -16,7 +16,7 @@ class yum::prerequisites {
 		recurse => true,
 		purge   => true,
 		ignore  => '\.ignore',
-		require => Package['yum-priorities'],
+	#	require => Package['yum-priorities'],
 	}
     
 	#gpg key

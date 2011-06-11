@@ -41,6 +41,17 @@ class yum {
 				}
 			}
 		}
+        redhat: {
+			case $lsbmajdistrelease {
+				5: {
+					include yum::redhat::five
+				}
+				default: { 
+					info 'no class for this version yet defined, try to configure it with the version for 5'
+					include yum::redhat::five
+				}
+            }
+        }
 		default: {
 			fail 'no managed repo yet for this distro'
 		}
