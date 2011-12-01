@@ -1,3 +1,4 @@
 class yum::redhat::five {
-    include yum::centos::five
+    include yum::repo::extras
+    include yum::repo::epel::main
 }
