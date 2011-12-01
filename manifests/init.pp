@@ -18,7 +18,7 @@ class yum {
 	# autoupdate
 	package { 'yum-cron':
 		ensure  => present,
-		require => [ Class['yum::repo::base'], Class['yum::repo::extras'] ],
+		#require => [ Class['yum::repo::base'], Class['yum::repo::extras'] ],
 	}
 
 	service { 'yum-cron':
