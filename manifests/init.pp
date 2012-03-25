@@ -18,7 +18,6 @@ class yum {
 	# autoupdate
 	package { 'redhat-lsb':
 		ensure  => present,
-		require => [ Class['yum::repo::base'], Class['yum::repo::extras'] ],
 	}
 	#package { 'yum-cron':
 	#	ensure  => present,
