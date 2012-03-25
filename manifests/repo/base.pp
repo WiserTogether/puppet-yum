@@ -9,5 +9,4 @@ class yum::repo::base {
 		gpgcheck   => 1,
 		gpgkey     => 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5',
 	}
-    }
 }
