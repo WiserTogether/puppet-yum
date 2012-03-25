@@ -4,6 +4,7 @@ class yum::repo::pgdg90 {
 		      baseurl => "http://yum.pgrpms.org/9.0/redhat/rhel-${lsbmajdistrelease}-${architecture}",
 		      enabled => 1,
 		      gpgcheck => 1,
-		      gpgkey => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG"
+		      gpgkey => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PGDG",
+		      require => Package['redhat-lsb']
 	}
 }
