@@ -4,10 +4,10 @@
 class yum::repo::jpackage::generic {
 	yum::managed_repo { 'jpackage-generic':
 		descr          => 'JPackage (free), generic',
-		mirrorlist     => 'http://www.jpackage.org/jpackage_generic_1.7.txt',
+		mirrorlist     => 'http://www.jpackage.org/mirrorlist.php?dist=generic&type=free&release=6.0',
 		failovermethod => 'priority',
 		gpgcheck       => 1,
-		gpgkey         => 'http://www.jpackage.org/jpackage.asc',
+		gpgkey         => "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-jpackage",
 		enabled        => 1,
 	}
 }

@@ -13,4 +13,6 @@ class yum::centos::five {
 	include yum::repo::epel::main
 	#include yum::repo::kbs::extras
 	#include yum::repo::kbs::misc
+	#include yum::repo::jpackage::generic
+	#include yum::repo::jpackage::rhel
 }

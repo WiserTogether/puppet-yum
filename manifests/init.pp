@@ -17,7 +17,7 @@
 class yum {
 	# autoupdate
 	package { 'redhat-lsb':
-		ensure  => present,
+		ensure  => 'installed',
 	}
 	#package { 'yum-cron':
 	#	ensure  => present,
