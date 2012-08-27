@@ -6,13 +6,13 @@
 # Marcel Härry haerry+puppet(at)puzzle.ch
 # Simon Josi josi+puppet(at)puzzle.ch
 #
-# This program is free software; you can redistribute 
-# it and/or modify it under the terms of the GNU 
-# General Public License version 3 as published by 
+# This program is free software; you can redistribute
+# it and/or modify it under the terms of the GNU
+# General Public License version 3 as published by
 # the Free Software Foundation.
 #
 
-# modules_dir { "yum": }
+#modules_dir { "yum": }
 
 class yum {
 	# autoupdate
@@ -35,7 +35,7 @@ class yum {
 				5: {
 					include yum::centos::five
 				}
-				default: { 
+				default: {
 					info 'no class for this version yet defined, try to configure it with the version for 5'
 					include yum::centos::five
 				}
@@ -46,7 +46,7 @@ class yum {
 				5: {
 					include yum::redhat::five
 				}
-				default: { 
+				default: {
 					info 'no class for this version yet defined, try to configure it with the version for 5'
 					include yum::redhat::five
 				}
@@ -56,7 +56,7 @@ class yum {
 			fail 'no managed repo yet for this distro'
 		}
 	}
-	
+
 	if $use_munin {
 		include yum::munin
 	}
