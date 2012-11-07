@@ -19,8 +19,6 @@ define yum::managed_repo ($descr          = 'absent',
 		owner   => 'root',
 		group   => 'root',
 		mode    => '0644',
-		replace => false,
-		before  => Yumrepo[$name],
 		require => [ File['/etc/yum.repos.d/']],
 	}
 
@@ -33,6 +31,6 @@ define yum::managed_repo ($descr          = 'absent',
 		gpgkey         => $gpgkey, 
 		failovermethod => $failovermethod,
 		priority       => $priority,
-		require        => [ File['/etc/pki/rpm-gpg/']],
+		require        => [ File['/etc/pki/rpm-gpg/'], File["/etc/yum.repos.d/${name}.repo"]],
 	}
 }
