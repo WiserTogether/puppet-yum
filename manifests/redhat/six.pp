@@ -1,2 +1,2 @@
-class yum::redhat::five {
+class yum::redhat::six {
 }

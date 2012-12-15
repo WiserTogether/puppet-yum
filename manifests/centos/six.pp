@@ -1,7 +1,7 @@
-# Class: yum::centos::five
+# Class: yum::centos::six
 #
 #
-class yum::centos::five {
+class yum::centos::six {
 	include yum::repo::base
 	include yum::repo::updates
 }
