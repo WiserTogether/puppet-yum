@@ -1,0 +1,2 @@
+class yum::redhat::five {
+}
