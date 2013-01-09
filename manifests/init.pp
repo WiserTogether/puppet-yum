@@ -31,6 +31,9 @@ class yum {
 
         case $operatingsystem {
                 centos: {
+			if ! defined(Package['redhat-lsb']) {
+			        package { 'redhat-lsb' : ensure => present }
+			}
                         case $lsbmajdistrelease {
                                 5: {
                                         include yum::centos::five
@@ -45,8 +48,12 @@ class yum {
                         }
                 }
                 redhat: {
+			if ! defined(Package['redhat-lsb']) {
+			        package { 'redhat-lsb' : ensure => present }
+			}
                         case $lsbmajdistrelease {
                                 5: {
+                                        
                                         include yum::redhat::five
                                 }
                                 6: {
